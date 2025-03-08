@@ -1,34 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import notificationsData from "./notifications.js";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+// notificationsItem component to show each notification
+// use children prop to show details
+function NotificationItem({ children, clearOneNotifs }) {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      {children}
+      <button
+        className="btn btn-sm btn-outline-danger"
+        onClick={clearOneNotifs}
+      >
+        Clear
+      </button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
