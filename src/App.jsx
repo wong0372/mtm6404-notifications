@@ -3,7 +3,7 @@ import notificationsData from "./notifications.js";
 import "./App.css";
 
 // add notificationsItem component to show each notification
-// use children prop to show details
+// use children prop to show details.
 function NotificationItem({ children, clearOneNotification }) {
   return (
     <div className="bg-light border border-secondary-subtle list-group-item d-flex justify-content-between align-items-center p-3 mb-3 rounded-2">
